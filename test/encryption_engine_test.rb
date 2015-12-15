@@ -58,4 +58,10 @@ class EncryptionEngineTest < Minitest::Test
 
     assert_equal [".", "3", "p", "4", "p", "e", "q", "2", "0", ",", "d"], e.convert_numbers_back_to_letters_arr
   end
+
+  def test_put_final_message_back_together
+    e = EncryptionEngine.new("Test String")
+
+    assert_equal ".3p4peq20,d", e.put_final_message_back_together
+  end
 end

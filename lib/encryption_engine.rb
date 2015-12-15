@@ -8,13 +8,16 @@ class EncryptionEngine
                 :aski_rotations_arr,
                 :convert_letters_to_numbers_arr,
                 :total_rotations_arr,
-                :convert_numbers_back_to_letters_arr
+                :convert_numbers_back_to_letters_arr,
+                :put_final_message_back_together
 
     # takes a string makes it an array
-    # assigns aski values to the string(variable)
+    # assigns aski values to the string
     # adds date and key array
     # adds string array and key array together
-    # assigns aski values to the string(variable)
+    # assigns aski values to the string
+    # converts back to string
+    
     def initialize(message, key=12345, date=121215, cypher=1)
       @message = message
       @key = key
@@ -67,14 +70,9 @@ class EncryptionEngine
       end
     end
 
-    def 
-
-
-
-
-
-
-
+    def put_final_message_back_together
+      convert_numbers_back_to_letters_arr.join.tr("_", " ")
+    end
 
 
 end

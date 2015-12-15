@@ -25,7 +25,4 @@ class Cypher
     ["_", ".", ","]
   end
 
-  
-
-
 end
