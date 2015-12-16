@@ -15,7 +15,6 @@ class Rotations
     @wheels = 4
   end
 
-
   def abcd_rotations_split(key)
     temporary_key_arr = key.chars
     a = temporary_key_arr[0..1].join("").to_i
