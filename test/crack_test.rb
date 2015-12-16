@@ -34,4 +34,10 @@ class CrackTest < Minitest::Test
     assert_equal ["C", "D", "A", "B", "C", "D", "A"], c.unknown_abcd_key_arr[-7..-1]
   end
 
+  def test_index_abcd_across_encrypted_and_known_arr
+    c = Crack.new(".6f3p7pi a73w1op.w8jw,ajq")
+
+    asset_equal [], c.index_abcd_across_encrypted_and_known_arr
+  end
+
 end

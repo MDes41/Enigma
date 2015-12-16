@@ -36,7 +36,8 @@ class Crack
   end
 
   def index_abcd_across_encrypted_and_known_arr
-    A_index = @unknown_abcd_key_arr[-7..-1].index("A")
+    create_unknown_abcd_key_arr
+    A_in = @unknown_abcd_key_arr[-7..-1].index("A")
     B_index = @unknown_abcd_key_arr[-7..-1].index("B")
     C_index = @unknown_abcd_key_arr[-7..-1].index("C")
     D_index = @unknown_abcd_key_arr[-7..-1].index("D")
@@ -47,6 +48,15 @@ class Crack
     C_index = known_characters_values[C_index] - end_of_message_arr[C_index]
     D_index = known_characters_values[D_index] - end_of_message_arr[D_index]
 
+    A_index_arr = []
+    B_index_arr = []
+    C_index_arr = []
+    D_index_arr = []
+
+    while A_index < 100
+      A_index_arr << A_index.chars
+    end
+    binding.pry
   end
 
   def last_seven_chars
