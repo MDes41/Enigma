@@ -1,3 +1,4 @@
+require 'test_helper'
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/decrypt'
@@ -15,13 +16,13 @@ class DecryptTest < Minitest::Test
   end
 
   def test_that_message_is_decrypted
-    e = Decrypt.new(".3p4peq20,d", 12345, 121215 )
+    e = Decrypt.new(".3p4peq20,d", "12345", 121215 )
 
     assert_equal "test string", e.decrypted_message
   end
 
   def test_that_decrypted_message_is_the_output
-    skip
-    assert_equal "Test String", Decrypt.new(".3p4peq20,d", 12345, 121215)
+    e = Decrypt.new(".3p4peq20,d", "12345", 121215)
+    assert_equal "test string", e.decrypted_message
   end
 end

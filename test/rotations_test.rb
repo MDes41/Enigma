@@ -1,3 +1,4 @@
+require 'test_helper'
 require_relative '../lib/rotations'
 require 'minitest/autorun'
 require 'minitest/pride'
@@ -9,7 +10,7 @@ class RotationsTest < Minitest::Test
   end
 
   def test_given_key_assigns_to_an_array
-    e = Rotations.new
+    e = Rotations.new("12345")
 
     assert_equal [12, 23, 34, 45], e.key_arr_integers
   end

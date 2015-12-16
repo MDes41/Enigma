@@ -1,15 +1,9 @@
 require 'pry'
+require_relative 'rotations'
+require_relative 'cypher'
 
 class EncryptionEngine
-    attr_reader :cypher_map,
-                :initial_message_arr,
-                :message_count,
-                :rotations_arr,
-                :aski_rotations_arr,
-                :convert_letters_to_numbers_arr,
-                :total_rotations_arr,
-                :convert_numbers_back_to_letters_arr,
-                :put_final_message_back_together
+    attr_reader :cypher_map
 
     # takes a string makes it an array
     # assigns aski values to the string
@@ -17,8 +11,8 @@ class EncryptionEngine
     # adds string array and key array together
     # assigns aski values to the string
     # converts back to string
-    
-    def initialize(message, key=12345, date=121215, cypher=1)
+
+    def initialize(message, key="12345", date=121215, cypher=1)
       @message = message
       @key = key
       @date = date

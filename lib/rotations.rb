@@ -7,7 +7,8 @@ class Rotations
               :key_with_date_arr_extended
 
 
-  def initialize(key=12345, date=121215)
+
+  def initialize(key="12345", date=121215)
     abcd_rotations_split(key)
     date_rotations_split(date)
     add_date_to_key_arr
@@ -16,7 +17,7 @@ class Rotations
 
 
   def abcd_rotations_split(key)
-    temporary_key_arr = key.to_s.chars
+    temporary_key_arr = key.chars
     a = temporary_key_arr[0..1].join("").to_i
     b = temporary_key_arr[1..2].join("").to_i
     c = temporary_key_arr[2..3].join("").to_i

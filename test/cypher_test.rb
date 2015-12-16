@@ -1,3 +1,4 @@
+require 'test_helper'
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/cypher'
@@ -32,5 +33,5 @@ class CypherTest < Minitest::Test
       assert_equal ["d", "c", "b", "a"], c.full_cypher_arr_bkwrd[-4..-1]
     end
 
-  
+
   end
