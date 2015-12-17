@@ -18,8 +18,9 @@ class Encrypt
 
 end
 
-__FILE__
-# my_message = File.read(ARGV[0]).delete("\n")
-# output = Encrypt.new(my_message, "82648", "030415")
-# encrypted =  output.encrypted_message
-# File.write(ARGV[1], encrypted)
+if __FILE__ == $PROGRAM_NAME
+my_message = File.read(ARGV[0]).delete("\n")
+output = Encrypt.new(my_message, "82648", "030415")
+encrypted =  output.encrypted_message
+File.write(ARGV[1], encrypted)
+end

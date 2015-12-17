@@ -18,10 +18,11 @@ class Decrypt
 
 end
 
-__FILE__
-# encrypted = File.read(ARGV[0]).delete("\n")
-# key = ARGV[2]
-# date = ARGV[3]
-# output = Decrypt.new(encrypted, key, date)
-# decrypted = output.decrypted_message
-# File.write(ARGV[1], decrypted)
+if __FILE__ == $PROGRAM_NAME
+encrypted = File.read(ARGV[0]).delete("\n")
+key = ARGV[2]
+date = ARGV[3]
+output = Decrypt.new(encrypted, key, date)
+decrypted = output.decrypted_message
+File.write(ARGV[1], decrypted)
+end

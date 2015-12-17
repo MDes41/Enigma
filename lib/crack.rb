@@ -1,5 +1,6 @@
 require 'pry'
 require_relative 'encryption_engine'
+require_relative 'decrypt'
 
 class Crack
   attr_reader :unknown_abcd_key_arr,
@@ -14,8 +15,7 @@ class Crack
     @date = date
     @wheels = 4
     @key = get_the_final_key
-    d = Decrypt.new(@my_message, @key, @date)
-    @cracked_message = d.decrypted_message
+    @cracked_message = Decrypt.new(@my_message, @key, @date).decrypted_message
   end
 
   #finds the aski values of the message with a key of 00000 and todays date rotation
@@ -127,9 +127,11 @@ class Crack
 
 end
 
-__FILE__
-# encrypted_message = File.read(ARGV[0]).delete("\n")
-# date = ARGV[2]
-# output = Crack.new(encrypted_message, date)
-# cracked = output.cracked_message
-# File.write(ARGV[1], cracked)
+if __FILE__ == $PROGRAM_NAME
+encrypted = File.read(ARGV[0])
+date = ARGV[2]
+# binding.pry
+output = Crack.new(encrypted, date)
+cracked = output.cracked_message
+File.write(ARGV[1], cracked)
+end
