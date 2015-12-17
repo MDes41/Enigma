@@ -7,6 +7,8 @@ class Cypher
               :full_cypher_arr,
               :full_cypher_arr_bkwrd
 
+  #creates an array of all the values used to decrypt and encrypt
+
   def initialize
     @full_cypher_arr = letters_arr + zero_to_9_arr + extra_char_arr
     @full_cypher_arr_bkwrd = @full_cypher_arr.reverse

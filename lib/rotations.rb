@@ -6,7 +6,9 @@ class Rotations
               :key_with_date_arr,
               :key_with_date_arr_extended
 
-
+  #takes in the date and key to create 4 character arrays
+  #adds the keys together
+  #extends the key to the length of the message_count
 
   def initialize(key="12345", date=121215)
     abcd_rotations_split(key)
@@ -25,7 +27,7 @@ class Rotations
   end
 
   def date_rotations_split(date)
-    temporary_date_arr = date ** 2
+    temporary_date_arr = date.to_i ** 2
     temporary_string_of_dates = temporary_date_arr.to_s.chars[-4..-1]
     @date_arr_integers = temporary_string_of_dates.map{ |i| i.to_i }
   end

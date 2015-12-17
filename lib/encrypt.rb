@@ -5,6 +5,8 @@ class Encrypt
   attr_reader :cypher_map,
               :encrypted_message
 
+  #encrypts message passing in cypher map to encryption engine
+
   def initialize(message, key="12345", date=121215)
     @message = message
     @key = key
@@ -16,4 +18,8 @@ class Encrypt
 
 end
 
-c = Encrypt.new("Test String")
+__FILE__
+# my_message = File.read(ARGV[0]).delete("\n")
+# output = Encrypt.new(my_message, "82648", "030415")
+# encrypted =  output.encrypted_message
+# File.write(ARGV[1], encrypted)

@@ -15,7 +15,12 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_returns_decrypted_message
-      e = Enigma.new
-      assert_equal "test string", e.decrypt(".3p4peq20,d", "12345")
-    end
+    e = Enigma.new
+    assert_equal "test string", e.decrypt(".3p4peq20,d", "12345")
+  end
+
+  def test_pass_in_todays_date
+    e = Enigma.new
+    assert_equal 0, e.pass_in_todays_date.to_i - e.pass_in_todays_date.to_i
+  end
 end
